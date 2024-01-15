@@ -1,0 +1,77 @@
+{
+  "name": "@sergeyzwezdin/node-logger",
+  "version": "1.0.0",
+  "description": "Winston logger configuration",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    "require": "./lib/index.cjs.js",
+    "import": "./lib/index.esm.js"
+  },
+  "files": [
+    "lib/**/*.*"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublish": "npm run build",
+    "prepack": "npm run build",
+    "lint": "eslint . --ext ts,tsx",
+    "format": "prettier --write \"**/*.ts*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeyzwezdin/node-logger.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "winston",
+    "logger"
+  ],
+  "author": "Sergey Zwezdin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergeyzwezdin/node-logger/issues"
+  },
+  "homepage": "https://github.com/sergeyzwezdin/node-logger#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "25.0.7",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@rollup/plugin-terser": "0.4.4",
+    "@rollup/plugin-typescript": "11.1.6",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "9.2.6",
+    "@semantic-release/npm": "11.0.2",
+    "@sergeyzwezdin/eslint-config": "2.2.1",
+    "@sergeyzwezdin/prettier-config": "1.1.1",
+    "@sergeyzwezdin/semantic-release-commits-config": "1.0.3",
+    "@types/js-yaml": "4.0.9",
+    "@types/node": "20.11.0",
+    "eslint": "8.56.0",
+    "rollup": "4.9.5",
+    "rollup-plugin-copy": "3.5.0",
+    "rollup-plugin-delete": "2.0.0",
+    "rollup-plugin-dts": "6.1.0",
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "semantic-release": "23.0.0",
+    "semantic-release-telegram-bot": "2.0.1",
+    "tslib": "2.6.2",
+    "typescript": "5.3.3"
+  },
+  "prettier": "@sergeyzwezdin/prettier-config",
+  "eslintConfig": {
+    "extends": "@sergeyzwezdin/eslint-config/node",
+    "ignorePatterns": [
+      "lib"
+    ]
+  },
+  "dependencies": {
+    "js-yaml": "4.1.0",
+    "winston": "3.11.0",
+    "winston-telegram": "2.7.0",
+    "winston-transport": "4.6.0"
+  }
+}
