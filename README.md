@@ -1,4 +1,4 @@
-# @sergeyzwezdin/node-logger
+# @relab/node-logger
 
 Winston-based logger configuration with Telegram integration.
 
@@ -6,11 +6,11 @@ Winston-based logger configuration with Telegram integration.
 
 ## Usage
 
-1. `npm install --save @sergeyzwezdin/node-logger`
+1. `npm install --save @relab/node-logger`
 2. Configure layout, verbosity level and Telegram (if necessary)
 3. Patch `console` object:
 ```typescript
-import { patchCommonLogger } from '@sergeyzwezdin/node-logger'
+import { patchCommonLogger } from '@relab/node-logger'
 patchCommonLogger()
 ```
 4. Import `logger` to write logs into default area
@@ -20,20 +20,20 @@ patchCommonLogger()
 
 ### Layout
 ```typescript
-import { configureLogger } from '@sergeyzwezdin/node-logger'
+import { configureLogger } from '@relab/node-logger'
 configureLogger({ kind: 'layout', layout: ['timestamp', 'level', 'area', 'message', 'details', 'error'] })
 ```
 
 ### Verbosity level
 ```typescript
-import { configureLogger } from '@sergeyzwezdin/node-logger'
+import { configureLogger } from '@relab/node-logger'
 configureLogger({ kind: 'verbosity', verbosity: { area: '*', level: 'error' } })
 configureLogger({ kind: 'verbosity', verbosity: { area: 'express', level: 'debug' } })
 ```
 
 ### Telegram
 ```typescript
-import { configureLogger } from '@sergeyzwezdin/node-logger'
+import { configureLogger } from '@relab/node-logger'
 configureLogger({
     kind: 'telegram',
     telegram: {
@@ -46,7 +46,7 @@ configureLogger({
 
 ## Example of usage
 ```typescript
-import { patchCommonLogger, logger, scoped, configureLogger } from '@sergeyzwezdin/node-logger'
+import { patchCommonLogger, logger, scoped, configureLogger } from '@relab/node-logger'
 
 // Configure and patch logger
 configureLogger({ kind: 'layout', layout: ['timestamp', 'level', 'area', 'message', 'details', 'error'] })
