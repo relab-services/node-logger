@@ -24,7 +24,8 @@
     "url": "git+https://github.com/relab-services/node-logger.git"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "keywords": [
     "winston",
